@@ -1,0 +1,12 @@
+{
+  "name": "jkenix-test-inmedian-digital",
+  "type": "module",
+  "version": "1.0.0",
+  "author": "jkenix",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  },
+  "scripts": {
+    "scss": "sass --watch --no-source-map --style=compressed sources/scss/_index.scss:sources/main.css"
+  }
+}

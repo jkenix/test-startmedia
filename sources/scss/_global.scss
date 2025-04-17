@@ -1,0 +1,66 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Layout
+
+html {
+    font-size: 1rem;
+    scroll-behavior: smooth;
+
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background-color: $body-bg-color;
+
+    color: $dark;
+
+    font-family: $main-font;
+    font-weight: normal;
+    font-size: 1rem;
+
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    animation: toggle-opacity 0.5s ease-in 0s 1 forwards;
+
+    position: relative;
+
+    margin: 0 20px;
+}
+
+// Tags
+h1 {
+    color: $dark;
+
+    font-family: $main-font;
+    font-weight: 400;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    letter-spacing: normal;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+tr,
+td {
+    font-family: $main-font;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}

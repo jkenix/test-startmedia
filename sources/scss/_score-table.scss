@@ -1,0 +1,155 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.score-table {
+    &__content {
+        margin-top: 25px;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+
+        letter-spacing: 1px;
+
+        @media (max-width: $lg) {
+            font-size: 1.5rem;
+
+            text-align: center;
+        }
+
+        @media (max-width: $sm) {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__sort-status {
+        @include column;
+
+        gap: 5px;
+
+        margin-top: 15px;
+    }
+
+    &__sort-title {
+        color: $red;
+
+        font-weight: 500;
+        font-size: 1.25rem;
+
+        text-align: end;
+
+        @media (max-width: $lg) {
+            font-size: 1.1rem;
+        }
+    }
+
+    &__sort-value {
+        animation: toggle-opacity 0.2s ease-in 0s 1 forwards;
+
+        color: $green;
+
+        font-size: 1rem;
+        font-weight: 600;
+
+        text-align: end;
+        text-decoration: underline;
+        text-transform: uppercase;
+
+        @media (max-width: $lg) {
+            font-size: 0.9rem;
+        }
+    }
+
+    // Results
+
+    &__results {
+        box-shadow: $box-shadow-table-score;
+
+        margin: 25px 0;
+
+        overflow: auto;
+
+        @media (max-width: $lg) {
+            display: block;
+        }
+
+        td {
+            font-size: 0.85rem;
+            font-weight: 400;
+
+            &:hover {
+                background-color: $green;
+
+                color: $white;
+            }
+
+            @media (max-width: $lg) {
+                font-size: 0.8rem;
+            }
+        }
+
+        th,
+        td {
+            max-width: 150px;
+        }
+
+        th,
+        tr,
+        td {
+            transition: all 0.1s ease-in-out;
+        }
+    }
+
+    &__results-title {
+        font-size: 0.74rem;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $gray;
+
+            color: $white;
+
+            @media (min-width: $lg) {
+                &::after {
+                    display: inline-block;
+                }
+            }
+        }
+
+        &::after {
+            animation: toggle-opacity 0.2s ease-in 0s 1 forwards;
+            display: none;
+
+            content: "⟜";
+            color: $dark;
+
+            padding-left: 5px;
+
+            width: 10px;
+            height: 10px;
+        }
+
+        &:active {
+            color: $gray-2;
+
+            @media (min-width: $lg) {
+                &::after {
+                    color: $white;
+                    rotate: 60deg;
+                }
+            }
+        }
+    }
+
+    &__highlight {
+        background-color: $yellow;
+    }
+
+    & .score-table__value-bold {
+        font-weight: 600;
+
+        text-align: center;
+    }
+}
